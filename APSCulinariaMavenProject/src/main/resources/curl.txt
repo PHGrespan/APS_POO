@@ -1,0 +1,54 @@
+Listar avaliações por receita /avaliacoes/{nomeReceita}
+
+curl --location --request GET 'localhost:8090/avaliacoes/Receita 1'
+
+
+Inserir Avaliação por receita /avaliacoes/{nomeReceita}
+
+curl --location --request POST 'localhost:8090/avaliacoes/Receita 1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "nomeUsuario": "Pedro",
+    "descricao": "Descricao teste",
+    "nota": 10
+}'
+
+Listar todos os Ingredientes
+
+curl --location --request GET 'localhost:8090/ingredientes'
+
+
+Listar todas as Receitas
+
+curl --location --request GET 'localhost:8090/receitas'
+
+
+Inserir Receita por Usuário /receitas/{nomeUsuario}
+
+curl --location --request POST 'localhost:8090/receitas/Pedro' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "nome": "Receita 1",
+    "tempoPreparo": 3.4,
+    "passos": "Passo 1: aaaaa, passo 2: 3123asc",
+    "ingredientes": [
+        {
+            "nome": "ingrediente 1",
+            "quantidade": "3 gramas"
+        },
+        {
+            "nome": "ingrediente 2",
+            "quantidade": "8 gramas"
+        }
+    ]
+}'
+
+
+Inserir Usuario
+
+curl --location --request POST 'localhost:8090/usuarios' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "cpf": 11133344454,
+    "nome": "Pedro"
+}'
