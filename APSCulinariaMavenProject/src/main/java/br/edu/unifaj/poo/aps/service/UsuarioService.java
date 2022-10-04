@@ -16,4 +16,8 @@ public class UsuarioService {
         UsuarioDao usuarioDao = new UsuarioDao(usuario.getCpf(), usuario.getNome());
         return usuarioRepository.postUsuario(usuarioDao);
     }
+
+    public UsuarioDao getUsuario(String nome) throws Exception {
+        return usuarioRepository.getUsuarioByNome(nome);
+    }
 }
