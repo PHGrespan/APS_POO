@@ -108,7 +108,7 @@ public class ReceitaRepository {
     public void createImage(String base64, String nome) throws Exception {
         byte[] imgBytes = Base64.getMimeDecoder().decode(base64);
         FileOutputStream fos = new FileOutputStream(
-                "./APSCulinariaMavenProject/src/main/resources/static/images/" + nome);
+                "./../APS-RECEITAS-FRONT-END-WEB/img/" + nome);
         fos.write(imgBytes);
         fos.close();
         System.out.println("Imagem criada: " + nome);
