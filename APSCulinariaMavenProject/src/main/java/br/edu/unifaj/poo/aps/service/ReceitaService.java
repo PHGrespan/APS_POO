@@ -13,7 +13,6 @@ import br.edu.unifaj.poo.aps.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -55,6 +54,8 @@ public class ReceitaService {
                 throw new Exception("Ingrediente não existe: " + ingrediente.getNome());
             }
         }
+
+        receitaRepository.createImage(receita.getImagem(), receita.getNome() + ".jpeg");
 
         // insere receita
         ReceitaDao receitaDao = receitaRepository.postReceita(new ReceitaDao(receita.getNome(), receita.getTempoPreparo(), receita.getPassos(), usuarioDao));
